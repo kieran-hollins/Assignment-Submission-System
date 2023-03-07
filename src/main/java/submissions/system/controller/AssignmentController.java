@@ -5,4 +5,6 @@ import submissions.system.service.AssignmentService;
 
 public class AssignmentController {
 
+    private AssignmentService assignmentService;
+
 }

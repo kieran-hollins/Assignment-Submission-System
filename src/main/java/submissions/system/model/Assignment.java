@@ -15,7 +15,7 @@ public class Assignment implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "assignment_id")
-    private int id;
+    private long id;
 
     @Column(name = "title")
     private String title;
@@ -27,9 +27,9 @@ public class Assignment implements Serializable {
     private int credits;
 
     @Column(name = "assignment_module_id")
-    private int moduleId;
+    private long moduleId;
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -57,11 +57,12 @@ public class Assignment implements Serializable {
         this.credits = credits;
     }
 
-    public int getModuleId() {
+    public long getModuleId() {
         return moduleId;
     }
 
-    public void setModuleId(int moduleId) {
+    public void setModuleId(long moduleId) {
         this.moduleId = moduleId;
     }
+
 }

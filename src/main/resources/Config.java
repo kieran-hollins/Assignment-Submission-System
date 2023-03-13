@@ -32,5 +32,13 @@ public class Config {
         viewResolver.setOrder(1);
         return viewResolver;
     }
-    
+
+    @Bean
+    @Description("Spring Message Resolver")
+    public ResourceBundleMessageSource messageSource() {
+        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+        messageSource.setBasename("messages");
+        return messageSource;
+    }
+
 }

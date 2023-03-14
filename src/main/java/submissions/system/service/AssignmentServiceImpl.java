@@ -1,6 +1,7 @@
 package submissions.system.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import submissions.system.model.*;
@@ -30,6 +31,12 @@ public class AssignmentServiceImpl implements AssignmentService{
     public Assignment getAssignmentById(long id) {
         Optional<Assignment> assignment = assignmentRepository.findById(id);
         return assignment.get();
+    }
+
+    @Override
+    public List<Assignment> getAssignmentsByModuleId(Long moduleId) {
+        List<Assignment> assignments = assignmentRepository.getAssignmentsByModuleId(moduleId);
+        return assignments;
     }
 
     @Override

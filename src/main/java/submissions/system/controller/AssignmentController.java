@@ -39,4 +39,9 @@ public class AssignmentController {
         return assignmentService.deleteAssignmentById(id);
     } 
 
+    @GetMapping("/homepage/{moduleId}")
+    public List<Assignment> getAssignmentsByModuleId(@PathVariable("moduleId") Long userId) {
+        return assignmentService.getAssignmentsByModuleId(userId);
+    }
+
 }

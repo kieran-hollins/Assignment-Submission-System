@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org" lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/css/styles.css}" rel="stylesheet" />
+    <title>dashboard</title>
+</head>
+<body>
+
+    <nav>
+
+        <div id="nav-name-section" class="nav-section">
+            <h1>ASSIGNMENT SUBMISSION SYSTEM</h1>
+        </div>
+
+        <div id="nav-link-section" class="nav-section">
+            <a href="#" class="nav-link">DASHBOARD</a>
+            <a href="#" class="nav-link">SUBMIT</a>
+            <a href="#" class="nav-link">LOGOUT</a>
+        </div>
+
+    </nav>
+
+    <main>
+        <article>
+            <div class="home-assignment-name"></div>
+            <div class="home-due-date"></div>
+            <div class="home-status"></div>
+            <div class="home-grade"></div>
+        </article>
+    </main>
+
+</body>
+</html>

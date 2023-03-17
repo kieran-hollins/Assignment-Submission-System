@@ -57,4 +57,12 @@ public class Student implements Serializable {
         this.courseId = courseId;
     }
 
+    public String getStudentPassword() {
+        return passwordHash;
+    }
+
+    public void setStudentPassword(String passwordHash) {
+        this.passwordHash = passwordHash;
+    }
+
 }

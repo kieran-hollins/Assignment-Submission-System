@@ -16,10 +16,30 @@ public class Course implements Serializable {
     @Column(name = "course_id")
     private long courseId;
 
-    @Column(name = "coursename")
+    @Column(name = "course_name")
     private String courseName;
 
     @Column(name = "credits")
     private int credits;
+
+    public void setId(long courseId) {
+        this.courseId = courseId;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public int getCourseCredits() {
+        return credits;
+    }
+
+    public void setCourseCredits(int credits) {
+        this.credits = credits;
+    }
 
 }

@@ -12,7 +12,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 @Service
-public class AssignmentServiceImpl implements AssignmentService{
+public class AssignmentServiceImpl implements AssignmentService {
     @Autowired
     AssignmentRepository assignmentRepository;
 
@@ -49,6 +49,7 @@ public class AssignmentServiceImpl implements AssignmentService{
             if (Objects.nonNull(assignment.getTitle()) && !"".equalsIgnoreCase(assignment.getTitle())) {
                 originalAssignment.setTitle(assignment.getTitle());
             }
+
             if (Objects.nonNull(assignment.getDescription()) && !"".equalsIgnoreCase(assignment.getDescription())) {
                 originalAssignment.setDescription(assignment.getDescription());
             }
@@ -66,6 +67,5 @@ public class AssignmentServiceImpl implements AssignmentService{
         }
         return "No such assignment in database";
     }
-
 
 }

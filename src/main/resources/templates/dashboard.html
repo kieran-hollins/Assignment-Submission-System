@@ -27,10 +27,11 @@
 
     <main>
         <article>
-            <div class="home-assignment-name"></div>
-            <div class="home-due-date"></div>
-            <div class="home-status"></div>
-            <div class="home-grade"></div>
+            <tr th:each="assignment : ${assignments}">
+                <td th:text="${assignment.id}">1</td>
+                <td><a href="#" th:text="${assignment.title}">Title ...</a></td>
+                <td th:text="${assignment.description}">Description ...</td>
+            </tr>
         </article>
     </main>
 

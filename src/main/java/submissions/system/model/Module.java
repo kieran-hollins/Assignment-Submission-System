@@ -46,11 +46,11 @@ public class Module implements Serializable {
         this.id = id;
     }
 
-    public String getCourseName() {
+    public String getModuleName() {
         return name;
     }
 
-    public void setCourseName(String name) {
+    public void setModuleName(String name) {
         this.name = name;
     }
 
@@ -64,6 +64,10 @@ public class Module implements Serializable {
 
     public int getCredits() {
         return credits;
+    }
+
+    public void setCredits(int credits) {
+        this.credits = credits;
     }
 
     @Override

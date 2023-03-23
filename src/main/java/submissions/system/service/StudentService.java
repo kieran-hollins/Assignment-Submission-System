@@ -11,4 +11,6 @@ public interface StudentService {
     Student getStudentById(long matNum);
 
     Student updateStudentById(long matNum, Student student);
+
+    String deleteStudentById(long matNum);
 }

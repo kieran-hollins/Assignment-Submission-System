@@ -61,4 +61,13 @@ public class StudentServiceImpl implements StudentService {
     public Student addStudent(Student student) {
         return studentRepository.save(student);
     }
+
+    @Override
+    public String deleteStudentById(long id) {
+        if (studentRepository.findById(id).isPresent()) {
+            studentRepository.deleteById(id);
+            return "Student deleted sucessfully";
+        }
+        return "No such student in database";
+    }
 }

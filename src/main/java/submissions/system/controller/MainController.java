@@ -28,7 +28,7 @@ public class MainController {
     private CourseService courseService;
 
     @GetMapping("/dashboard/student/{matNum}")
-    public String studentDashboard(@PathVariable("matNum") long matNum = ${matNum}, Model model) {
+    public String studentDashboard(@PathVariable long matNum, Model model) {
         Student student = studentservice.getStudentById(matNum);
         Course course = courseService.getCourseById(student.getStudentCourseId());
         List<Module> modules = moduleService.getModulesByCourseId(course.getId());

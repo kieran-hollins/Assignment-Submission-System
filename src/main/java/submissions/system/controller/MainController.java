@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import submissions.system.model.*;
+import submissions.system.model.Module;
 import submissions.system.repository.*;
 import submissions.system.service.*;
 
@@ -20,10 +21,18 @@ public class MainController {
     @Autowired
     private StudentService studentservice;
 
+    @Autowired
+    private ModuleService moduleService;
+
+    @Autowired
+    private CourseService courseService;
+
     @GetMapping("/dashboard/student/{matNum}")
-    public String studentDashboard(@PathVariable("matNum") long matNum, Model model) {
+    public String studentDashboard(@PathVariable("matNum") long matNum = ${matNum}, Model model) {
         Student student = studentservice.getStudentById(matNum);
-        model.addAttribute("assignments", assignmentService.getAssignmentsByModuleId())
+        Course course = courseService.getCourseById(student.getStudentCourseId());
+        List<Module> modules = moduleService.getModulesByCourseId(course.getId());
+        model.addAttribute("assignments", )
         return "dashboard";
     }
 

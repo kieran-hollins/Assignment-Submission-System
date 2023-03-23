@@ -33,6 +33,10 @@ public class Course implements Serializable {
         this.credits = credits;
     }
 
+    public long getId() {
+        return courseId;
+    }
+
     public void setId(long courseId) {
         this.courseId = courseId;
     }

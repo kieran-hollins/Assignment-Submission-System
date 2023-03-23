@@ -14,4 +14,6 @@ public interface ModuleService {
 
     String deleteModuleById(long id);
 
+    List<Module> getModulesByCourseId(long courseId);
+
 }

@@ -22,6 +22,17 @@ public class Course implements Serializable {
     @Column(name = "credits")
     private int credits;
 
+    public Course() {
+        super();
+    }
+
+    public Course(long courseId, String courseName, int credits) {
+        super();
+        this.courseId = courseId;
+        this.courseName = courseName;
+        this.credits = credits;
+    }
+
     public void setId(long courseId) {
         this.courseId = courseId;
     }
@@ -40,6 +51,11 @@ public class Course implements Serializable {
 
     public void setCourseCredits(int credits) {
         this.credits = credits;
+    }
+
+    @Override
+    public String toString() {
+        return "Course [id=" + courseId + ", name=" + courseName + ", credits=" + credits + "]";
     }
 
 }

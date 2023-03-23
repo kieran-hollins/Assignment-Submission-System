@@ -26,6 +26,22 @@ public class Module implements Serializable {
     @Column(name = "credits")
     private int credits;
 
+    public Module() {
+        super();
+    }
+
+    public Module(long id, String name, long courseId, int credits) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.courseId = courseId;
+        this.credits = credits;
+    }
+
+    public long getId() {
+        return id;
+    }
+
     public void setId(long id) {
         this.id = id;
     }
@@ -36,6 +52,23 @@ public class Module implements Serializable {
 
     public void setCourseName(String name) {
         this.name = name;
+    }
+
+    public long getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(long courseId) {
+        this.courseId = courseId;
+    }
+
+    public int getCredits() {
+        return credits;
+    }
+
+    @Override
+    public String toString() {
+        return "Module [id=" + id + ", name=" + name + ", course ID=" + courseId + ", credits=" + credits + "]";
     }
 
 }

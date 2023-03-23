@@ -29,17 +29,17 @@ public class AssignmentController {
         return assignmentService.getAssignmentById(id);
     }
 
-    @PutMapping("/assignment/{id}")
+    @PutMapping("/update-assignment/{id}")
     public Assignment updateAssignment(@PathVariable("id") Long id, @RequestBody Assignment assignment) {
         return assignmentService.updateAssignmentById(id, assignment);
     }
 
-    @DeleteMapping("/assignment/{id}")
+    @DeleteMapping("/delete-assignment/{id}")
     public String deleteAssignment(@PathVariable("id") Long id) {
         return assignmentService.deleteAssignmentById(id);
-    } 
+    }
 
-    @GetMapping("/homepage/{moduleId}")
+    @GetMapping("/homepage/module/{moduleId}")
     public List<Assignment> getAssignmentsByModuleId(@PathVariable("moduleId") Long userId) {
         return assignmentService.getAssignmentsByModuleId(userId);
     }

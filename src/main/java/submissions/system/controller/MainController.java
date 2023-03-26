@@ -28,12 +28,12 @@ public class MainController {
     private CourseService courseService;
 
     @GetMapping("/dashboard/student/{matNum}")
-    public String studentDashboard(@PathVariable long matNum, Model model) {
+    public List<Module> studentDashboard(@PathVariable long matNum, Model model) {
         Student student = studentservice.getStudentById(matNum);
         Course course = courseService.getCourseById(student.getStudentCourseId());
-        List<Module> modules = moduleService.getModulesByCourseId(course.getId());
-        model.addAttribute("assignments", )
-        return "dashboard";
+        //List<Module> modules = moduleService.getModulesByCourseId(course.getId());
+
+        return moduleService.getModulesByCourseId(course.getId());
     }
 
     @RequestMapping("/login")

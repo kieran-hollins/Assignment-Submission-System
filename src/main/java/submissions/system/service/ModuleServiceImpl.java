@@ -58,9 +58,8 @@ public class ModuleServiceImpl implements ModuleService {
     }
 
     @Override
-    public List<Module> getModulesByCourseId(Long courseId) {
-        List<Module> modules = moduleRepository.getModulesByCourseId(courseId);
-        return modules;
+    public List<Module> getModulesByCourseId(long courseId) {
+        return moduleRepository.getModulesByCourseId(courseId);
     }
 
     @Override

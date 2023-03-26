@@ -58,6 +58,12 @@ public class ModuleServiceImpl implements ModuleService {
     }
 
     @Override
+    public List<Module> getModulesByCourseId(Long courseId) {
+        List<Module> modules = moduleRepository.getModulesByCourseId(courseId);
+        return modules;
+    }
+
+    @Override
     public String deleteModuleById(long id) {
         if (moduleRepository.findById(id).isPresent()) {
             moduleRepository.deleteById(id);

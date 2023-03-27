@@ -30,7 +30,7 @@ public class MainController {
 
     @GetMapping("/dashboard/student/{matNum}")
     @ResponseBody
-    public List<Assignment> studentDashboard(@PathVariable long matNum, Model model) {
+    public String studentDashboard(@PathVariable long matNum, Model model) {
         Student student = studentservice.getStudentById(matNum);
         Course course = courseService.getCourseById(student.getStudentCourseId());
         List<Module> modules = moduleService.getModulesByCourseId(course.getId());
@@ -40,17 +40,19 @@ public class MainController {
             assignments.addAll(assignmentService.getAssignmentsByModuleId(module.getId()));
         }
 
-        return assignments;
+        model.addAttribute("assignments", assignments);
+
+        return "dashboard";
     }
 
     // @GetMapping("/dashboard/student/{matNum}")
     // @ResponseBody
     // public List<Assignment> studentDashboard(@RequestParam List<String>)
 
-    @RequestMapping("/")
-    public String dashboard() {
-        return "dashboard";
-    }
+    // @RequestMapping("/")
+    // public String dashboard() {
+    //     return "dashboard";
+    // }
 
     @RequestMapping("/login")
     public String login() {

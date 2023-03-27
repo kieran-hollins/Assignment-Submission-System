@@ -27,18 +27,24 @@
 
     <main>
         <article>
-            <table>
-                <tr th:each="assignment : ${assignments}">
-                    <td th:text="${assignment.id}">1</td>
-                    <td><a href="#" th:text="${assignment.title}">Title ...</a></td>
-                    <td th:text="${assignment.description}">Description ...</td>
-                </tr>
+            <table id="assignmentTable">
+                <thead>
+                    <tr>
+                        <th> Title </th>
+                        <th> Decription </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="assignment : ${assignments}">
+                        <td><span th:text="${assignment.title}"> Title </span></td>
+                        <td><span th:text="${assignment.description}"> Description </span></td>
+                    </tr>
+                </tbody>
             </table>
-            
-
-            
         </article>
     </main>
+
+    <script th:src="@{/js/app.js}"></script>
 
 </body>
 </html>

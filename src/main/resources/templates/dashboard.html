@@ -27,11 +27,16 @@
 
     <main>
         <article>
-            <tr th:each="assignment : ${assignments}">
-                <td th:text="${assignment.id}">1</td>
-                <td><a href="#" th:text="${assignment.title}">Title ...</a></td>
-                <td th:text="${assignment.description}">Description ...</td>
-            </tr>
+            <table>
+                <tr th:each="assignment : ${assignments}">
+                    <td th:text="${assignment.id}">1</td>
+                    <td><a href="#" th:text="${assignment.title}">Title ...</a></td>
+                    <td th:text="${assignment.description}">Description ...</td>
+                </tr>
+            </table>
+            
+
+            
         </article>
     </main>
 

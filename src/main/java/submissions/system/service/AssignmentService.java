@@ -14,6 +14,6 @@ public interface AssignmentService {
 
     String deleteAssignmentById(Long id);
 
-    List<Assignment> getAssignmentsByModuleId(Long userId);
+    List<Assignment> getAssignmentsByModuleId(Long moduleId);
 
 }

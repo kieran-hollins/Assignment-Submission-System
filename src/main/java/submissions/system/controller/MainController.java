@@ -11,6 +11,7 @@ import submissions.system.repository.*;
 import submissions.system.service.*;
 
 import java.util.List;
+import java.util.ArrayList;
 
 @Controller
 public class MainController {
@@ -28,12 +29,27 @@ public class MainController {
     private CourseService courseService;
 
     @GetMapping("/dashboard/student/{matNum}")
-    public List<Module> studentDashboard(@PathVariable long matNum, Model model) {
+    @ResponseBody
+    public List<Assignment> studentDashboard(@PathVariable long matNum, Model model) {
         Student student = studentservice.getStudentById(matNum);
         Course course = courseService.getCourseById(student.getStudentCourseId());
-        //List<Module> modules = moduleService.getModulesByCourseId(course.getId());
+        List<Module> modules = moduleService.getModulesByCourseId(course.getId());
+        List<Assignment> assignments = new ArrayList<Assignment>();
 
-        return moduleService.getModulesByCourseId(course.getId());
+        for (Module module : modules) {
+            assignments.addAll(assignmentService.getAssignmentsByModuleId(module.getId()));
+        }
+
+        return assignments;
+    }
+
+    // @GetMapping("/dashboard/student/{matNum}")
+    // @ResponseBody
+    // public List<Assignment> studentDashboard(@RequestParam List<String>)
+
+    @RequestMapping("/")
+    public String dashboard() {
+        return "dashboard";
     }
 
     @RequestMapping("/login")

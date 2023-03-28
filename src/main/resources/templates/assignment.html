@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/css/styles.css}" rel="stylesheet" />
+    <title>assignment-view</title>
+</head>
+
+<body>
+
+    <nav>
+
+        <div id="nav-name-section" class="nav-section">
+            <h1>ASSIGNMENT SUBMISSION</h1>
+        </div>
+
+        <div id="nav-link-section" class="nav-section">
+            <h2><a href="#" class="nav-link">DASHBOARD</a></h2>
+            <h2><a href="#" class="nav-link">SUBMIT</a></h2>
+            <h2><a href="#" class="nav-link">LOGOUT</a></h2>
+        </div>
+
+    </nav>
+
+    <main>
+        <article id="assignment-article">
+            <h1 id="assignment-title" th:text="${assignment.title}"> this is where the title should be... </h1>
+            <hr>
+            <h3 id = "assignment-description" th:text="${assignment.description}"> this is where the assignment description should be... </h3>
+
+            <form id="assignment-submission-form" method="POST"
+                action="/assignment/submit" modelAttribute="submission">
+                
+                <label for="title">Title:</label><br>
+                <input type="text" name="title" placeholder="title for your submission"><br>
+                <input type="submit"/>
+            </form>
+
+        </article>
+    </main>
+
+    <script th:src="@{/js/app.js}"></script>
+
+</body>
+
+</html>

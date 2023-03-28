@@ -1,5 +1,6 @@
 package submissions.system.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -10,7 +11,7 @@ import submissions.system.service.AssignmentService;
 
 import java.util.List;
 
-@RestController
+@Controller
 public class AssignmentController {
 
     @Autowired
@@ -31,9 +32,11 @@ public class AssignmentController {
         return mav;
     }
 
-    @GetMapping("/assignment/{id}")
-    public Assignment getAssignment(@PathVariable("id") Long id) {
-        return assignmentService.getAssignmentById(id);
+    @GetMapping({ "/assignment/{id}" })
+    public ModelAndView getAssignment(@PathVariable Long id) {
+        ModelAndView mav = new ModelAndView("assignment");
+        mav.addObject("assignment", assignmentService.getAssignmentById(id));
+        return mav;
     }
 
     @PutMapping("/update-assignment/{id}")

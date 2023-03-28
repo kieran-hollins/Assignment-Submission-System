@@ -24,9 +24,9 @@ public class AssignmentController {
         return assignmentService.publishAssignment(assignment);
     }
 
-    @GetMapping({"/assignment", "/"})
+    @GetMapping({ "/assignments" })
     public ModelAndView getAllAssignments() {
-        ModelAndView mav = new ModelAndView("dashboard");
+        ModelAndView mav = new ModelAndView("all-assignments");
         mav.addObject("assignments", assignmentRepository.findAll());
         return mav;
     }

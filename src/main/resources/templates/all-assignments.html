@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org" lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/css/styles.css}" rel="stylesheet" />
+    <title>dashboard</title>
+</head>
+<body>
+
+    <nav>
+
+        <div id="nav-name-section" class="nav-section">
+            <h1>ASSIGNMENT SUBMISSION</h1>
+        </div>
+
+        <div id="nav-link-section" class="nav-section">
+            <h2><a href="#" class="nav-link">DASHBOARD</a></h2>
+            <h2><a href="#" class="nav-link">SUBMIT</a></h2>
+            <h2><a href="#" class="nav-link">LOGOUT</a></h2>
+        </div>
+
+    </nav>
+
+    <main>
+        <article>
+            <div id="dashboard-frame">
+                <table class="dashboard-table" id="assignmentTable">
+                    <thead>
+                        <tr>
+                            <th scope = "col"> </th>
+                            <th scope = "col"> Title </th>
+                            <th scope = "col"> Decription </th>
+                            <th scope = "col"> Credits </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="assignment : ${assignments}">
+                            <td><img class="assignment-img" th:src="@{/img/clipboard.png}"></td>
+                            <td><span th:text="${assignment.title}"> Title </span></td>
+                            <td><span th:text="${assignment.description}"> Description </span></td>
+                            <td><span th:text="${assignment.credits}"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+        </article>
+    </main>
+
+    <script th:src="@{/js/app.js}"></script>
+
+</body>
+</html>

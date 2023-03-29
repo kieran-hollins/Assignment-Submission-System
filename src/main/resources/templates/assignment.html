@@ -18,8 +18,7 @@
         </div>
 
         <div id="nav-link-section" class="nav-section">
-            <h2><a href="#" class="nav-link">DASHBOARD</a></h2>
-            <h2><a href="#" class="nav-link">SUBMIT</a></h2>
+            <h2><a href="/logout" class="nav-link">DASHBOARD</a></h2>
             <h2><a href="#" class="nav-link">LOGOUT</a></h2>
         </div>
 
@@ -36,7 +35,11 @@
             <h4>use this form to submit your assignment</h4><br>
 
             <form id="assignment-submission-form" method="POST"
-                action="/assignment/submit" modelAttribute="submission">
+                action="/assignment" modelAttribute="submission">
+
+                <input type="text" name="matNum" placeholder="matriculation number"><br>
+
+                <input th:value="${assignment.moduleId}" type="text" name="moduleId" placeholder="module ID" style="display:none;"><br>
                 
                 <input type="text" name="title" placeholder="title for your submission"><br>
                 

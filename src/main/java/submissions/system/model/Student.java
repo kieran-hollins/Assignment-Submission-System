@@ -26,6 +26,9 @@ public class Student implements Serializable {
     @Column(name = "student_course_id")
     private long courseId;
 
+    @Column(name = "email")
+    private String email;
+
     @Column(name = "password_hash")
     private String passwordHash;
 
@@ -33,11 +36,14 @@ public class Student implements Serializable {
         super();
     }
 
-    public Student(long matNum, String fName, String lName) {
+    public Student(long matNum, String fName, String lName, long courseId, String email, String passwordHash) {
         super();
         this.matNum = matNum;
         this.fName = fName;
         this.lName = lName;
+        this.courseId = courseId;
+        this.email = email;
+        this.passwordHash = passwordHash;
     }
 
     public void setId(long matNum) {
@@ -64,15 +70,23 @@ public class Student implements Serializable {
         return courseId;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public void setStudentCourseId(long courseId) {
         this.courseId = courseId;
     }
 
-    public String getStudentPassword() {
+    public String getPassword() {
         return passwordHash;
     }
 
-    public void setStudentPassword(String passwordHash) {
+    public void setPassword(String passwordHash) {
         this.passwordHash = passwordHash;
     }
 

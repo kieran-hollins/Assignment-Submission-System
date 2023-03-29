@@ -18,16 +18,17 @@
         </div>
 
         <div id="nav-link-section" class="nav-section">
-            <a href="#" class="nav-link">REGISTER</a>
+            <a href="/student/register" class="nav-link">REGISTER</a>
         </div>
 
     </nav>
 
     <main>
-        <form th:action="@{/}">
-            <input type="text" th:email="email"/>
-            <input type="password" th:password="password" />
-            <input type="submit" />
+        <form id="login-form" method="POST" action="/student/login" 
+            modelAttribute="student" enctype="multipart/form-data">
+            <input type="text" name="email" placeholder="email address"><br>
+            <input type="password" name="password" placeholder="password"><br>
+            <button type="submit" class="button-submit" role="button">submit</button>
         </form>
     </main>
 

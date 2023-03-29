@@ -20,7 +20,7 @@ public class AssignmentController {
     @Autowired
     private AssignmentRepository assignmentRepository;
 
-    @PostMapping("/assignment")
+    @PostMapping(value = "/assignment"/* , consumes = {"application/json"}*/)
     public Assignment publishAssignment(@RequestBody Assignment assignment) {
         return assignmentService.publishAssignment(assignment);
     }

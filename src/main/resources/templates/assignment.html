@@ -35,7 +35,7 @@
             <h4>use this form to submit your assignment</h4><br>
 
             <form id="assignment-submission-form" method="POST"
-                action="/assignment" modelAttribute="submission">
+                action="/submission" modelAttribute="submission" enctype="multipart/form-data">
 
                 <input type="text" name="matNum" placeholder="matriculation number"><br>
 
@@ -48,7 +48,7 @@
                 <label for="file-upload" class="custom-file-upload">
                     upload a file
                 </label>
-                <input id="file-upload" type="file" accept=".*">
+                <input id="file-upload" type="file" accept="image/*,.doc,.docx,.pdf">
 
                 <button type="submit" class="button-submit" role="button">submit</button>
             </form>

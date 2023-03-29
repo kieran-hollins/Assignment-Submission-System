@@ -39,10 +39,10 @@
                     </thead>
                     <tbody>
                         <tr th:each="assignment : ${assignments}">
-                            <td><img class="assignment-img" th:src="@{/img/clipboard.png}"></td>
+                            <td><a th:href="'/assignment/' + ${assignment.id}"><img class="assignment-img" th:src="@{/img/clipboard.png}"></a></td>
                             <td><a th:href="'/assignment/' + ${assignment.id}"><p th:text="${assignment.title}"> Title </p></a></td>
-                            <td><a><span th:text="${assignment.description}"> Description </span></a></td>
-                            <td><a><span th:text="${assignment.credits}"></span></a></td>
+                            <td><a th:href="'/assignment/' + ${assignment.id}"><span th:text="${assignment.description}"> Description </span></a></td>
+                            <td><a th:href="'/assignment/' + ${assignment.id}"><span th:text="${assignment.credits}"></span></a></td>
                         </tr>
                     </tbody>
                 </table>

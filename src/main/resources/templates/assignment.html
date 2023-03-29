@@ -27,16 +27,27 @@
 
     <main>
         <article id="assignment-article">
+            <hr>
             <h1 id="assignment-title" th:text="${assignment.title}"> this is where the title should be... </h1>
             <hr>
-            <h3 id = "assignment-description" th:text="${assignment.description}"> this is where the assignment description should be... </h3>
+            <h3 id = "assignment-description" th:text="${assignment.description}"> this is where the assignment description should be... </h3><br>
+            <hr>
+
+            <h4>use this form to submit your assignment</h4><br>
 
             <form id="assignment-submission-form" method="POST"
                 action="/assignment/submit" modelAttribute="submission">
                 
-                <label for="title">Title:</label><br>
                 <input type="text" name="title" placeholder="title for your submission"><br>
-                <input type="submit"/>
+                
+                <input type="text" name="description" placeholder="add any details here"/><br>
+
+                <label for="file-upload" class="custom-file-upload">
+                    upload a file
+                </label>
+                <input id="file-upload" type="file" accept=".*">
+
+                <button type="submit" class="button-submit" role="button">submit</button>
             </form>
 
         </article>

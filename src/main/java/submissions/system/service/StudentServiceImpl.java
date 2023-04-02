@@ -2,7 +2,7 @@ package submissions.system.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.security.core.userdetails.*;
+//import org.springframework.security.core.userdetails.*;
 import org.springframework.stereotype.Service;
 
 import submissions.system.model.*;
@@ -77,13 +77,13 @@ public class StudentServiceImpl implements StudentService {
         return "No such student in database";
     }
 
-    @Override
-    public UserDetails loadUserByEmail(String email) throws UsernameNotFoundException {
-        Student user = studentRepository.findByEmail(email);
-        if (user == null) {
-            throw new UsernameNotFoundException("User not found");
-        }
-        return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(),
-                new ArrayList<>());
-    }
+    // @Override
+    // public UserDetails loadUserByEmail(String email) throws UsernameNotFoundException {
+    //     Student user = studentRepository.findByEmail(email);
+    //     if (user == null) {
+    //         throw new UsernameNotFoundException("User not found");
+    //     }
+    //     return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(),
+    //             new ArrayList<>());
+    // }
 }

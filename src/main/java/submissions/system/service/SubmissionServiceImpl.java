@@ -49,8 +49,12 @@ public class SubmissionServiceImpl implements SubmissionService {
                 originalSubmission.setDescription(submission.getDescription());
             }
 
-            if (Objects.nonNull(submission.getFile())) {
-                originalSubmission.setFile(submission.getFile());
+            if (Objects.nonNull(submission.getFileName())) {
+                originalSubmission.setFileName(submission.getFileName());
+            }
+
+            if (Objects.nonNull(submission.getFileData())) {
+                originalSubmission.setFileData(submission.getFileData());
             }
 
             if(Objects.nonNull(submission.getModuleId())) {

@@ -87,10 +87,17 @@ h4, h5, form, td, input, p {
     color: white;
 }
 
-a, a:hover, a:visited, a:active {
+a, a:visited, a:active {
     text-decoration: none;
     color: inherit;
 }
+
+a:hover {
+    color: inherit;
+    text-decoration: underline;
+}
+
+
 
 /* ----- NAV SECTION ----- */
 
@@ -186,7 +193,7 @@ thead th:nth-child(2) {
     width: 40%;
   }
 
-  thead th:nth-child(3) {
+  thead th:nth-child(4) {
     width: 15%;
   }
 

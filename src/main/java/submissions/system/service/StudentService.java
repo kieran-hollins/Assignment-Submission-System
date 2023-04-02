@@ -2,7 +2,7 @@ package submissions.system.service;
 
 import java.util.List;
 
-import org.springframework.security.core.userdetails.*;
+//import org.springframework.security.core.userdetails.*;
 import org.springframework.stereotype.Service;
 
 import submissions.system.model.*;
@@ -19,6 +19,6 @@ public interface StudentService {
 
     String deleteStudentById(long matNum);
 
-    UserDetails loadUserByEmail(String email);
+    //UserDetails loadUserByEmail(String email);
 }
 

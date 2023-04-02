@@ -1,7 +1,6 @@
 package submissions.system.model;
 
 import java.io.Serializable;
-import java.sql.Blob;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -25,8 +24,11 @@ public class Submission implements Serializable {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "file")
-    private Blob file;
+    @Column(name = "fileName")
+    private String fileName;
+
+    @Column(name = "fileData")
+    private byte[] fileData;
 
     @Column(name = "submission_module_id")
     private long moduleId;
@@ -38,12 +40,13 @@ public class Submission implements Serializable {
         super();
     }
 
-    public Submission(long id, String title, String description, Blob file, long moduleId, long matNum) {
+    public Submission(long id, String title, String description, String fileName, byte[] fileData, long moduleId, long matNum) {
         super();
         this.id = id;
         this.title = title;
         this.description = description;
-        this.file = file;
+        this.fileName = fileName;
+        this.fileData = fileData;
         this.moduleId = moduleId;
         this.matNum = matNum;
     }
@@ -72,12 +75,20 @@ public class Submission implements Serializable {
         this.description = description;
     }
 
-    public Blob getFile() {
-        return file;
+    public String getFileName() {
+        return fileName;
     }
 
-    public void setFile(Blob file) {
-        this.file = file;
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public byte[] getFileData() {
+        return fileData;
+    }
+
+    public void setFileData(byte[] fileData) {
+        this.fileData = fileData;
     }
 
     public long getModuleId() {

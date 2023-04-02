@@ -18,8 +18,8 @@
         </div>
 
         <div id="nav-link-section" class="nav-section">
-            <h2><a href="/logout" class="nav-link">DASHBOARD</a></h2>
-            <h2><a href="#" class="nav-link">LOGOUT</a></h2>
+            <h2><a href="/assignments" class="nav-link">DASHBOARD</a></h2>
+            <h2><a href="/logout" class="nav-link">LOGOUT</a></h2>
         </div>
 
     </nav>
@@ -35,7 +35,7 @@
             <h4>use this form to submit your assignment</h4><br>
 
             <form id="assignment-submission-form" method="POST"
-                action="/submission" modelAttribute="submission" enctype="multipart/form-data">
+                action="/submission/save" modelAttribute="submission" enctype="multipart/form-data">
 
                 <input type="text" name="matNum" placeholder="matriculation number"><br>
 
@@ -48,7 +48,7 @@
                 <label for="file-upload" class="custom-file-upload">
                     upload a file
                 </label>
-                <input id="file-upload" type="file" accept="image/*,.doc,.docx,.pdf">
+                <input id="file-upload" name="file" type="file" accept="image/*,.doc,.docx,.pdf">
 
                 <button type="submit" class="button-submit" role="button">submit</button>
             </form>

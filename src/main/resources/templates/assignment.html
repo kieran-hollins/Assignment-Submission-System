@@ -34,8 +34,9 @@
 
             <h4>use this form to submit your assignment</h4><br>
 
-            <form id="assignment-submission-form" method="POST"
-                action="/submission/save" modelAttribute="submission" enctype="multipart/form-data">
+            <form id="assignment-submission-form" modelAttribute="upload" method="POST"
+                action="/submission/save" enctype="multipart/form-data">
+
 
                 <input type="text" name="matNum" placeholder="matriculation number"><br>
 

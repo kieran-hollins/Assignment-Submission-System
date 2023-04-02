@@ -46,6 +46,10 @@ public class Student implements Serializable {
         this.passwordHash = passwordHash;
     }
 
+    public Long getId() {
+        return this.matNum;
+    }
+
     public void setId(long matNum) {
         this.matNum = matNum;
     }

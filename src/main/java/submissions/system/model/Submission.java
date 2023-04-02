@@ -2,6 +2,7 @@ package submissions.system.model;
 
 import java.io.Serializable;
 
+import io.micrometer.common.lang.Nullable;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,7 +15,7 @@ import jakarta.persistence.Table;
 public class Submission implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "submission_id")
     private long id;
 
@@ -24,9 +25,11 @@ public class Submission implements Serializable {
     @Column(name = "description")
     private String description;
 
+    @Nullable
     @Column(name = "fileName")
     private String fileName;
 
+    @Nullable
     @Column(name = "fileData")
     private byte[] fileData;
 

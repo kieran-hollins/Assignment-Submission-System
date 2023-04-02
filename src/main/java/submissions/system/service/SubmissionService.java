@@ -2,8 +2,6 @@ package submissions.system.service;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
 import submissions.system.model.*;
 
 public interface SubmissionService {
@@ -15,5 +13,5 @@ public interface SubmissionService {
 
     Submission updateSubmissionById(long submissionId, Submission submission);
 
-    String deleteSubmissionById(long submission_id);
+    String deleteSubmissionById(long submissionId);
 }

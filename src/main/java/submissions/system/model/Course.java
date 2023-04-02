@@ -14,10 +14,10 @@ public class Course implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "course_id")
-    private long courseId;
+    public long courseId;
 
     @Column(name = "course_name")
-    private String courseName;
+    public String courseName;
 
     @Column(name = "credits")
     private int credits;

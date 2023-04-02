@@ -318,3 +318,37 @@ input[type="file"] {
     box-shadow: rgba(50, 50, 50, 0.5) 0 1px 30px;
     transition-duration: .05s;
 }
+
+#submission-success-article {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    justify-content: center;
+}
+
+#success-title {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.success-title {
+    justify-self: end;
+}
+
+.success-details {
+    justify-self: start;
+}
+
+#return-btn {
+    align-items: center;
+}
+#return-btn > button {
+    display: flex;
+    margin: auto;
+    margin-top: 2rem;
+    align-items: center;
+}

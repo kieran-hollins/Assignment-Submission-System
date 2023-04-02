@@ -18,19 +18,29 @@
         </div>
 
         <div id="nav-link-section" class="nav-section">
-            <h2><a href="/logout" class="nav-link">DASHBOARD</a></h2>
-            <h2><a href="#" class="nav-link">LOGOUT</a></h2>
+            <h2><a href="/assignments" class="nav-link">DASHBOARD</a></h2>
+            <h2><a href="/logout" class="nav-link">LOGOUT</a></h2>
         </div>
 
     </nav>
 
     <main>
-        <article id="submission-success-article">
+        <div id="success-title">
             <h1>Submission Successful</h1>
+        </div>
 
-            <h2>Your submission reference is: </h2>
-
+        <article id="submission-success-article">
+            <h2 class="success-title">Your submission reference is: </h2>
+            <h2 class="success-details" th:text="${submission.id}">Your submission reference is: </h2>
+            <h3 class="success-title">Submission Title:</h3>
+            <h3 class="success-details" th:text="${submission.title}">Title: </h3>
+            <h3 class="success-title">Submission Description:</h3>
+            <h3 class="success-details" th:text="${submission.description}">description: </h3>
         </article>
+
+        <form id="return-btn" action="/assignments">
+            <button class="button-submit">return to assignment view</button>
+        </form>
     </main>
 
     <script th:src="@{/js/app.js}"></script>

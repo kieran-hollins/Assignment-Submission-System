@@ -26,10 +26,16 @@
     <main>
         <h1>Enter your details below to register as a student</h1>
         <form id="login-form" method="POST" action="/student/register" 
-            modelAttribute="student" enctype="multipart/form-data">
+            modelAttribute="student">
             <input type="text" name="matNum" placeholder="matriculation number"><br>
             <input type="text" name="fName" placeholder="first name"><br>
             <input type="text" name="lName" placeholder="last name"><br>
+            <input list="course-list" name="courses" placeholder="select a course"><br>
+                <datalist id="course-list">
+                    <select>
+                        <option th:each="course : ${courses}" th:value="${course.courseId}" th:label="${course.courseName}"></option>
+                    </select>
+                </datalist>
             <input type="text" name="email" placeholder="email address"><br>
             <input type="password" name="password" placeholder="password"><br>
             <button type="submit" class="button-submit" role="button">submit</button>

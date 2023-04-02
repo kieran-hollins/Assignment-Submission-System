@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import submissions.system.model.Student;
+import submissions.system.repository.CourseRepository;
 import submissions.system.repository.StudentRepository;
+import submissions.system.service.CourseService;
 import submissions.system.service.StudentService;
 
 import java.util.List;
@@ -22,18 +24,26 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
+    @Autowired
+    private CourseService courseService;
+
+    @Autowired
+    private CourseRepository courseRepository;
+
     @GetMapping("/register")
-    public String showRegistrationForm() {
-        return "register";
+    public ModelAndView showRegistrationForm() {
+        ModelAndView mav = new ModelAndView("register-student");
+        mav.addObject("courses", courseService.getAllCourses());
+        return mav;
     }
 
-    @PostMapping("/register")
-    public String registerStudent(@ModelAttribute("student") Student student, BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            return "register";
-        }
-        studentRepository.save(student);
-        return "redirect:/login";
+    @PostMapping("student/register")
+    public String registerStudent(@ModelAttribute("student") Student student) {
+        studentService.addStudent(student);
+
+        String view = "redirect:/assignments" + student.getId();
+
+        return view;
     }
     
 
